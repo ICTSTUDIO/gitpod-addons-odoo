@@ -3,8 +3,7 @@ tasks:
     python3 /home/gitpod/odoo/odoo-bin -ibase -ddev --addons-path=/home/gitpod/odoo/odoo/addons,/home/gitpod/odoo/addons,/workspace/gitpod-addons-odoo --stop-after-init
   command: >
     python3 /home/gitpod/odoo/odoo-bin -ddev --dev all --addons-path=/home/gitpod/odoo/odoo/addons,/home/gitpod/odoo/addons,/workspace/gitpod-addons-odoo
-- command: >
-    python3 /home/gitpod/.pyenv/versions/3.8.3/lib/python3.8/site-packages/pgadmin4/pgAdmin4.py
+    
 image:
   file: .gitpod.Dockerfile
   
