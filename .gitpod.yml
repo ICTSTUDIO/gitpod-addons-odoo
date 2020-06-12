@@ -1,7 +1,5 @@
 tasks:
-- init: >
-    python3 -m pip install -r /home/gitpod/odoo/requirements.txt
-  command: >
+- command: >
     python3 /home/gitpod/odoo/odoo-bin
     
 image:
