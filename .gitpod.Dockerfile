@@ -71,7 +71,7 @@ RUN pip install \
         coverage \
         flake8 \
         pylint-odoo \
-        six \
+        six
 
 ARG ODOO_SOURCE=ODOO/ODOO
 ARG ODOO_VERSION=13.0
