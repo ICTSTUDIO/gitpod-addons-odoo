@@ -1,5 +1,5 @@
 tasks:
-  - init: 'echo "TODO: Replace with init/build command"'
+  - init: git clone https://github.com/odoo/odoo /workspace
     command: 'echo "TODO: Replace with command to start project"'
 
 ports:
