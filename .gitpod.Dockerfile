@@ -117,15 +117,16 @@ RUN build_deps=" \
         inotify \
         virtualenv \
     && (python3 -m compileall -q /usr/local/lib/python3.6/ || true) \
-    && virtualenv -p python3 /home/gitpod/pgadmin4 \
-    && cd /home/gitpod/pgadmin4 \
-    && source bin/activate \
-    && pip3 install https://ftp.postgresql.org/pub/pgadmin/pgadmin4/v4.21/pip/pgadmin4-4.21-py2.py3-none-any.whl \
-    && deactivate \
     && apt-get purge -yqq $build_deps \
     && apt-get autopurge -yqq \
     && rm -Rf /var/lib/apt/lists/* /tmp/*
 
+RUN virtualenv -p python3 /home/gitpod/pgadmin4 \
+    && cd /home/gitpod/pgadmin4 \
+    && source bin/activate \
+    && pip3 install https://ftp.postgresql.org/pub/pgadmin/pgadmin4/v4.21/pip/pgadmin4-4.21-py2.py3-none-any.whl \
+    && deactivate \
+    
 RUN echo "import os" > lib/python3.8/site-packages/pgadmin4/config_local.py \
     && echo "DATA_DIR = os.path.realpath(os.path.expanduser(u'~/.pgadmin/'))" >> lib/python3.8/site-packages/pgadmin4/config_local.py \
     && echo "LOG_FILE = os.path.join(DATA_DIR, 'pgadmin4.log')" >> lib/python3.8/site-packages/pgadmin4/config_local.py \
