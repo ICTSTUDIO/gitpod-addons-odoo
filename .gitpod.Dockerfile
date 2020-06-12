@@ -1,6 +1,6 @@
 FROM gitpod/workspace-postgres
                     
-USER gitpod
+USER root
 
 # Install custom tools, runtime, etc. using apt-get
 # For example, the command below would install "bastet" - a command line tetris clone:
@@ -129,6 +129,8 @@ RUN build_deps=" \
     && apt-get purge -yqq $build_deps \
     && apt-get autopurge -yqq \
     && rm -Rf /var/lib/apt/lists/* /tmp/*
+
+USER gitpod
 
 RUN git clone https://github.com/odoo/odoo.git -b$ODOO_VERSION
 
