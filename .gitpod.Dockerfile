@@ -123,13 +123,13 @@ RUN build_deps=" \
 
 RUN echo "Installing PgAdmin4" && pip3 install https://ftp.postgresql.org/pub/pgadmin/pgadmin4/v4.21/pip/pgadmin4-4.21-py2.py3-none-any.whl 
     
-# RUN echo "import os" > lib/python3.8.3/site-packages/pgadmin4/config_local.py \
-#     && echo "DATA_DIR = os.path.realpath(os.path.expanduser(u'~/.pgadmin/'))" >> lib/python3.8/site-packages/pgadmin4/config_local.py \
-#     && echo "LOG_FILE = os.path.join(DATA_DIR, 'pgadmin4.log')" >> lib/python3.8/site-packages/pgadmin4/config_local.py \
-#     && echo "SQLITE_PATH = os.path.join(DATA_DIR, 'pgadmin4.db')" >> lib/python3.8/site-packages/pgadmin4/config_local.py \
-#     && echo "SESSION_DB_PATH = os.path.join(DATA_DIR, 'sessions')" >> lib/python3.8/site-packages/pgadmin4/config_local.py \
-#     && echo "STORAGE_DIR = os.path.join(DATA_DIR, 'storage')" >> lib/python3.8/site-packages/pgadmin4/config_local.py \
-#     && echo "SERVER_MODE = False" > lib/python3.8/site-packages/pgadmin4/config_local.py
+RUN echo "import os" > /home/gitpod/.pyenv/versions/3.8.3/lib/python3.8/site-packages/pgadmin4/config_local.py \
+    && echo "DATA_DIR = os.path.realpath(os.path.expanduser(u'~/.pgadmin/'))" >> /home/gitpod/.pyenv/versions/3.8.3/lib/python3.8/site-packages/pgadmin4/config_local.py \
+    && echo "LOG_FILE = os.path.join(DATA_DIR, 'pgadmin4.log')" >> /home/gitpod/.pyenv/versions/3.8.3/lib/python3.8/site-packages/pgadmin4/config_local.py \
+    && echo "SQLITE_PATH = os.path.join(DATA_DIR, 'pgadmin4.db')" >> /home/gitpod/.pyenv/versions/3.8.3/lib/python3.8/site-packages/pgadmin4/config_local.py \
+    && echo "SESSION_DB_PATH = os.path.join(DATA_DIR, 'sessions')" >> /home/gitpod/.pyenv/versions/3.8.3/lib/python3.8/site-packages/pgadmin4/config_local.py \
+    && echo "STORAGE_DIR = os.path.join(DATA_DIR, 'storage')" >> /home/gitpod/.pyenv/versions/3.8.3/lib/python3.8/site-packages/pgadmin4/config_local.py \
+    && echo "SERVER_MODE = False" > /home/gitpod/.pyenv/versions/3.8.3/lib/python3.8/site-packages/pgadmin4/config_local.py
 
 USER gitpod
 
