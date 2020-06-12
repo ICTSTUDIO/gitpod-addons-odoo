@@ -11,7 +11,7 @@ USER root
 
 ARG GEOIP_UPDATER_VERSION=4.1.5
 ARG MQT=https://github.com/OCA/maintainer-quality-tools.git
-ARG WKHTMLTOPDF_VERSION=0.12.5
+ARG WKHTMLTOPDF_VERSION=0.12.6
 ENV DB_FILTER=.* \
     DEPTH_DEFAULT=1 \
     DEPTH_MERGE=100 \
@@ -43,8 +43,7 @@ ENV DB_FILTER=.* \
 RUN sudo add-apt-repository universe && apt-get -qq update \
     && apt-get install -yqq --no-install-recommends \
         curl \
-        libjpeg-turbo8-dev \
-    && curl -SLo wkhtmltox.deb https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/${WKHTMLTOPDF_VERSION}/wkhtmltox_${WKHTMLTOPDF_VERSION}-1.stretch_amd64.deb \
+    && curl -SLo wkhtmltox.deb https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/${WKHTMLTOPDF_VERSION}/wkhtmltox_${WKHTMLTOPDF_VERSION}-1.focal_amd64.deb \
 #     && echo "${WKHTMLTOPDF_CHECKSUM}  wkhtmltox.deb" | sha256sum -c - \
     && apt-get install -y --no-install-recommends \
       ./wkhtmltox.deb \
