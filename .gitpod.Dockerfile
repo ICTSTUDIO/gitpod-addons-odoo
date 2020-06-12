@@ -41,34 +41,34 @@ ENV DB_FILTER=.* \
 
 # Other requirements and recommendations
 # See https://github.com/$ODOO_SOURCE/blob/$ODOO_VERSION/debian/control
-RUN apt-get -qq update \
-    && apt-get install -yqq --no-install-recommends \
-        curl \
-    && curl -SLo wkhtmltox.deb https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/${WKHTMLTOPDF_VERSION}/wkhtmltox_${WKHTMLTOPDF_VERSION}-1.stretch_amd64.deb \
-    && echo "${WKHTMLTOPDF_CHECKSUM}  wkhtmltox.deb" | sha256sum -c - \
-    && apt-get install -yqq --no-install-recommends \
-        ./wkhtmltox.deb \
-    && curl --silent -L --output geoipupdate_${GEOIP_UPDATER_VERSION}_linux_amd64.deb https://github.com/maxmind/geoipupdate/releases/download/v${GEOIP_UPDATER_VERSION}/geoipupdate_${GEOIP_UPDATER_VERSION}_linux_amd64.deb \
-    && dpkg -i geoipupdate_${GEOIP_UPDATER_VERSION}_linux_amd64.deb \
-    && rm geoipupdate_${GEOIP_UPDATER_VERSION}_linux_amd64.deb \
-    && apt-get autopurge -yqq \
-    && rm -Rf wkhtmltox.deb /var/lib/apt/lists/* /tmp/* \
-    && sync
+# RUN apt-get -qq update \
+#     && apt-get install -yqq --no-install-recommends \
+#         curl \
+#     && curl -SLo wkhtmltox.deb https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/${WKHTMLTOPDF_VERSION}/wkhtmltox_${WKHTMLTOPDF_VERSION}-1.stretch_amd64.deb \
+#     && echo "${WKHTMLTOPDF_CHECKSUM}  wkhtmltox.deb" | sha256sum -c - \
+#     && apt-get install -yqq --no-install-recommends \
+#         ./wkhtmltox.deb \
+#     && curl --silent -L --output geoipupdate_${GEOIP_UPDATER_VERSION}_linux_amd64.deb https://github.com/maxmind/geoipupdate/releases/download/v${GEOIP_UPDATER_VERSION}/geoipupdate_${GEOIP_UPDATER_VERSION}_linux_amd64.deb \
+#     && dpkg -i geoipupdate_${GEOIP_UPDATER_VERSION}_linux_amd64.deb \
+#     && rm geoipupdate_${GEOIP_UPDATER_VERSION}_linux_amd64.deb \
+#     && apt-get autopurge -yqq \
+#     && rm -Rf wkhtmltox.deb /var/lib/apt/lists/* /tmp/* \
+#     && sync
 
 # Doodba-QA dependencies in a separate virtualenv
-COPY qa /qa
-RUN python -m venv --system-site-packages /qa/venv \
-    && . /qa/venv/bin/activate \
-    && pip install \
-        click \
-        coverage \
-        flake8 \
-        pylint-odoo \
-        six \
-    && npm install --loglevel error --prefix /qa eslint \
-    && deactivate \
-    && mkdir -p /qa/artifacts \
-    && git clone --depth 1 $MQT /qa/mqt
+# COPY qa /qa
+# RUN python -m venv --system-site-packages /qa/venv \
+#     && . /qa/venv/bin/activate \
+#     && pip install \
+#         click \
+#         coverage \
+#         flake8 \
+#         pylint-odoo \
+#         six \
+#     && npm install --loglevel error --prefix /qa eslint \
+#     && deactivate \
+#     && mkdir -p /qa/artifacts \
+#     && git clone --depth 1 $MQT /qa/mqt
 
 ARG ODOO_SOURCE=ODOO/ODOO
 ARG ODOO_VERSION=13.0
