@@ -46,7 +46,7 @@ RUN apt-get -qq update \
         curl \
     && curl -SLo wkhtmltox.deb https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/${WKHTMLTOPDF_VERSION}/wkhtmltox_${WKHTMLTOPDF_VERSION}-1.stretch_amd64.deb \
     && echo "${WKHTMLTOPDF_CHECKSUM}  wkhtmltox.deb" | sha256sum -c - \
-    && dpkg -i ./wkhtmltox.deb
+    && dpkg -i ./wkhtmltox.deb \
     && apt-get install -y --no-install-recommends \
 #         chromium \
         ffmpeg \
