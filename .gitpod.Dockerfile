@@ -44,6 +44,7 @@ ENV DB_FILTER=.* \
 RUN sudo add-apt-repository universe && apt-get -qq update \
     && apt-get install -yqq --no-install-recommends \
         curl \
+        libjpeg-turbo \
     && curl -SLo wkhtmltox.deb https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/${WKHTMLTOPDF_VERSION}/wkhtmltox_${WKHTMLTOPDF_VERSION}-1.stretch_amd64.deb \
     && echo "${WKHTMLTOPDF_CHECKSUM}  wkhtmltox.deb" | sha256sum -c - \
     && apt-get install -y --no-install-recommends \
