@@ -1,6 +1,6 @@
 tasks:
-  - init: git clone https://github.com/odoo/odoo /workspace
-    command: 'echo "TODO: Replace with command to start project"'
+  - init: git clone https://github.com/odoo/odoo /workspace/odoo
+    command: odoo.bin
 
 ports:
   - port: 8069
