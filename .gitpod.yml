@@ -1,7 +1,9 @@
 tasks:
-  - init: git clone https://github.com/odoo/odoo /workspace/odoo
-    command: python /workspace/odoo/odoo-bin
-
+- init: >
+    python3 -m pip install -r /home/gitpod/odoo/requirements.txt
+  command: >
+    python3 /home/gitpod/odoo/odoo-bin
+    
 image:
   file: .gitpod.Dockerfile
   
@@ -14,3 +16,7 @@ vscode:
     - mhutchie.git-graph@1.22.0:AwBE485Ar8KGvm79rHyw/A==
     - vsls-contrib.gistfs@0.0.67:7+4ec/WKGvtvbWJGbsMOLw==
     - ms-python.python@2020.5.78807:8JXFBceVJ9dP8l5p40H0gw==
+    
+github:
+    prebuilds:
+        pullRequestsFromForks: true
