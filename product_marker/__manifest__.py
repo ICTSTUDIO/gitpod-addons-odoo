@@ -4,7 +4,7 @@
 
 {
     'name': 'Product Marker',
-    'version': '10.0.1.0.1',
+    'version': '13.0.1.0.1',
     'category': 'Product',
     'summary': 'Provide Markers on Products',
     'author': 'ICTSTUDIO, André Schenkels',

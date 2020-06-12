@@ -4,7 +4,7 @@
 
 {
     'name': 'Simple Partner Sequence',
-    'version': '10.0.0.0.1',
+    'version': '13.0.0.0.1',
     'category': 'Partner Management',
     'author': 'ICTSTUDIO, André Schenkels',
     'license': 'AGPL-3',

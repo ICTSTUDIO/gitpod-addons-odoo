@@ -3,7 +3,7 @@
 # License: AGPL-3.0 or later (http://www.gnu.org/licenses/agpl)
 {
     'name': 'Simple Product Sequence',
-    'version': '10.0.0.0.1',
+    'version': '13.0.0.0.1',
     'category': 'Product Management',
     'author': 'ICTSTUDIO, André Schenkels',
     'website': 'http://www.ictstudio.eu',

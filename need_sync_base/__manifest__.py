@@ -3,7 +3,7 @@
 # License: AGPL-3.0 or later (http://www.gnu.org/licenses/agpl)
 {
     'name': 'Need Synchronization Base',
-    'version': '10.0.0.0.7',
+    'version': '13.0.0.0.1',
     'category': 'Tools',
     'author': 'ICTSTUDIO, André Schenkels',
     'website': 'http://www.ictstudio.eu',

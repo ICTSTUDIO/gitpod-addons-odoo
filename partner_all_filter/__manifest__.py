@@ -3,7 +3,7 @@
 # License: LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl)
 {
     'name': 'Show All Partners',
-    'version': '12.0.0.0.1',
+    'version': '13.0.0.0.1',
     'category': 'Partner Management',
     'author': 'ICTSTUDIO | André Schenkels',
     'website': 'http://www.ictstudio.eu',
