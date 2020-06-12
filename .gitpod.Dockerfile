@@ -48,17 +48,6 @@ RUN apt-get -qq update \
     && echo "${WKHTMLTOPDF_CHECKSUM}  wkhtmltox.deb" | sha256sum -c - \
     && apt-get install -yqq --no-install-recommends \
         ./wkhtmltox.deb \
-        fonts-liberation2 \
-        gettext \
-        git \
-        gnupg2 \
-        locales-all \
-        nano \
-        npm \
-        openssh-client \
-        telnet \
-        vim \
-        zlibc \
     && curl --silent -L --output geoipupdate_${GEOIP_UPDATER_VERSION}_linux_amd64.deb https://github.com/maxmind/geoipupdate/releases/download/v${GEOIP_UPDATER_VERSION}/geoipupdate_${GEOIP_UPDATER_VERSION}_linux_amd64.deb \
     && dpkg -i geoipupdate_${GEOIP_UPDATER_VERSION}_linux_amd64.deb \
     && rm geoipupdate_${GEOIP_UPDATER_VERSION}_linux_amd64.deb \
