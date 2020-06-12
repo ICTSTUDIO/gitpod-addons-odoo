@@ -48,8 +48,6 @@ RUN apt-get -qq update \
     && echo "${WKHTMLTOPDF_CHECKSUM}  wkhtmltox.deb" | sha256sum -c - \
     && apt-get install -yqq --no-install-recommends \
         ./wkhtmltox.deb \
-        chromium \
-        ffmpeg \
         fonts-liberation2 \
         gettext \
         git \
