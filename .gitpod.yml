@@ -2,6 +2,9 @@ tasks:
   - init: git clone https://github.com/odoo/odoo /workspace/odoo
     command: odoo.bin
 
+image:
+  file: .gitpod.Dockerfile
+  
 ports:
   - port: 8069
     onOpen: open-preview
