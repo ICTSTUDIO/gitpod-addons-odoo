@@ -1,6 +1,8 @@
 tasks:
-- command: >
-    python3 /home/gitpod/odoo/odoo-bin
+- init: >
+    python3 /home/gitpod/odoo/odoo-bin -ibase -ddev --stop-after-init
+  command: >
+    python3 /home/gitpod/odoo/odoo-bin -ddev
     
 image:
   file: .gitpod.Dockerfile
