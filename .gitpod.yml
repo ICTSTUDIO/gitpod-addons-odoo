@@ -1,0 +1,13 @@
+tasks:
+  - init: 'echo "TODO: Replace with init/build command"'
+    command: 'echo "TODO: Replace with command to start project"'
+
+ports:
+  - port: 8069
+    onOpen: open-preview
+
+vscode:
+  extensions:
+    - mhutchie.git-graph@1.22.0:AwBE485Ar8KGvm79rHyw/A==
+    - vsls-contrib.gistfs@0.0.67:7+4ec/WKGvtvbWJGbsMOLw==
+    - ms-python.python@2020.5.78807:8JXFBceVJ9dP8l5p40H0gw==
