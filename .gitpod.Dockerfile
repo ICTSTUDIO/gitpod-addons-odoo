@@ -121,11 +121,7 @@ RUN build_deps=" \
     && apt-get autopurge -yqq \
     && rm -Rf /var/lib/apt/lists/* /tmp/*
 
-RUN virtualenv -p python3 /home/gitpod/pgadmin4 \
-    && cd /home/gitpod/pgadmin4 \
-    && source bin/activate \
-    && pip3 install https://ftp.postgresql.org/pub/pgadmin/pgadmin4/v4.21/pip/pgadmin4-4.21-py2.py3-none-any.whl \
-    && deactivate \
+RUN echo "Installing PgAdmin4" && pip3 install https://ftp.postgresql.org/pub/pgadmin/pgadmin4/v4.21/pip/pgadmin4-4.21-py2.py3-none-any.whl 
     
 RUN echo "import os" > lib/python3.8/site-packages/pgadmin4/config_local.py \
     && echo "DATA_DIR = os.path.realpath(os.path.expanduser(u'~/.pgadmin/'))" >> lib/python3.8/site-packages/pgadmin4/config_local.py \
