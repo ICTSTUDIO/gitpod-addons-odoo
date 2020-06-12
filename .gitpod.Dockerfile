@@ -56,7 +56,7 @@ RUN apt-get -qq update \
         gnupg2 \
         locales-all \
 #         nano \
-        npm \
+#         npm \
         openssh-client \
         telnet \
 #         vim \
@@ -69,19 +69,19 @@ RUN apt-get -qq update \
     && sync
 
 # Doodba-QA dependencies in a separate virtualenv
-# COPY qa /qa
-# RUN python -m venv --system-site-packages /qa/venv \
-#     && . /qa/venv/bin/activate \
-#     && pip install \
-#         click \
-#         coverage \
-#         flake8 \
-#         pylint-odoo \
-#         six \
-#     && npm install --loglevel error --prefix /qa eslint \
-#     && deactivate \
-#     && mkdir -p /qa/artifacts \
-#     && git clone --depth 1 $MQT /qa/mqt
+COPY qa /qa
+RUN python -m venv --system-site-packages /qa/venv \
+    && . /qa/venv/bin/activate \
+    && pip install \
+        click \
+        coverage \
+        flake8 \
+        pylint-odoo \
+        six \
+    && npm install --loglevel error --prefix /qa eslint \
+    && deactivate \
+    && mkdir -p /qa/artifacts \
+    && git clone --depth 1 $MQT /qa/mqt
 
 ARG ODOO_SOURCE=ODOO/ODOO
 ARG ODOO_VERSION=13.0
