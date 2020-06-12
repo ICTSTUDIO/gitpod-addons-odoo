@@ -8,6 +8,6 @@ USER gitpod
 # RUN sudo apt-get -q update && #     sudo apt-get install -yq bastet && #     sudo rm -rf /var/lib/apt/lists/*
 #
 # More information: https://www.gitpod.io/docs/config-docker/
-RUN sudo mkdir /home/gitpod/odoo && git clone https://github.com/odoo/odoo.git -b13.0 /home/gitpod/odoo
+RUN git clone https://github.com/odoo/odoo.git -b13.0
 
 USER gitpod
