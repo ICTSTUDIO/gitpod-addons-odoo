@@ -39,6 +39,11 @@ ENV DB_FILTER=.* \
     WDB_WEB_PORT=1984 \
     WDB_WEB_SERVER=localhost
 
+# Download latest listing of available packages:
+RUN apt-get -y update
+# Upgrade already installed packages:
+RUN apt-get -y upgrade
+
 # Other requirements and recommendations
 # See https://github.com/$ODOO_SOURCE/blob/$ODOO_VERSION/debian/control
 RUN apt-get -qq update \
@@ -56,7 +61,7 @@ RUN apt-get -qq update \
         gnupg2 \
         locales-all \
 #         nano \
-#         npm \
+        npm \
         openssh-client \
         telnet \
 #         vim \
