@@ -41,14 +41,13 @@ ENV DB_FILTER=.* \
 
 # Other requirements and recommendations
 # See https://github.com/$ODOO_SOURCE/blob/$ODOO_VERSION/debian/control
-RUN apt-get -qq update \
+RUN sudo add-apt-repository universe && apt-get -qq update \
     && apt-get install -yqq --no-install-recommends \
         curl \
     && curl -SLo wkhtmltox.deb https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/${WKHTMLTOPDF_VERSION}/wkhtmltox_${WKHTMLTOPDF_VERSION}-1.stretch_amd64.deb \
     && echo "${WKHTMLTOPDF_CHECKSUM}  wkhtmltox.deb" | sha256sum -c - \
-    && dpkg -i ./wkhtmltox.deb \
     && apt-get install -y --no-install-recommends \
-#         chromium \
+      ./wkhtmltox.deb \
         ffmpeg \
         fonts-liberation2 \
         gettext \
@@ -132,6 +131,6 @@ RUN build_deps=" \
 
 USER gitpod
 
-RUN git clone https://github.com/odoo/odoo.git -b$ODOO_VERSION
+RUN git clone --depth 1 https://github.com/odoo/odoo.git -b$ODOO_VERSION
 
 USER gitpod
