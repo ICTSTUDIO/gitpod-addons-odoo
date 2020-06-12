@@ -40,9 +40,9 @@ ENV DB_FILTER=.* \
     WDB_WEB_SERVER=localhost
 
 # Download latest listing of available packages:
-RUN apt-get -y update
+# RUN apt-get -y update
 # Upgrade already installed packages:
-RUN apt-get -y upgrade
+# RUN apt-get -y upgrade
 
 # Other requirements and recommendations
 # See https://github.com/$ODOO_SOURCE/blob/$ODOO_VERSION/debian/control
@@ -51,7 +51,7 @@ RUN apt-get -qq update \
         curl \
     && curl -SLo wkhtmltox.deb https://github.com/wkhtmltopdf/wkhtmltopdf/releases/download/${WKHTMLTOPDF_VERSION}/wkhtmltox_${WKHTMLTOPDF_VERSION}-1.stretch_amd64.deb \
     && echo "${WKHTMLTOPDF_CHECKSUM}  wkhtmltox.deb" | sha256sum -c - \
-    && apt-get install -yqq --no-install-recommends \
+    && apt-get install -y --no-install-recommends \
         ./wkhtmltox.deb \
 #         chromium \
         ffmpeg \
