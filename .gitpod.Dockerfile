@@ -115,7 +115,7 @@ RUN build_deps=" \
         wdb \
         geoip2 \
         inotify \
-        virtualen \
+        virtualenv \
     && (python3 -m compileall -q /usr/local/lib/python3.6/ || true) \
     && virtualenv -p python3 /home/gitpod/pgadmin4 \
     && cd /home/gitpod/pgadmin4 \
